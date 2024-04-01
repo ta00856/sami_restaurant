@@ -1,0 +1,380 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF; /* Assuming a white background for the body */
+    margin: 0;
+    padding: 0;
+}
+.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+    background-color: #FFF !important; /* Force white background */
+}
+
+.navbar-dark .navbar-brand, .navbar-dark .nav-link {
+    color: orange !important; /* Change text color to orange */
+}
+
+
+header.navbar.bg-dark, footer.bg-dark {
+    background-color: #FFF !important; /* Force white background */
+}
+
+.navbar-dark .navbar-brand, .navbar-dark .nav-link {
+    color: orange !important; /* Change text color to orange */
+}
+
+footer.bg-dark {
+    color: #333 !important; /* Dark color for better visibility */
+}
+
+
+/* Header styles */
+header {
+    background-color: #FFF; /* White background for the header */
+    color: #333; /* Updated text color for better visibility on white background */
+}
+
+.navbar {
+    border-bottom: none !important; /* Yellow-orange border below the navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #CD212A; /* The brand color for contrast on white background */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #CD212A; /* Red color for the nav links for contrast on white background */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #FFC72C; /* Yellow-orange color for hover and focus states */
+}
+
+/* Custom button styles */
+.btn-custom {
+    background-color: #CD212A; /* Button background color */
+    color: #FFF; /* White text color for contrast */
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #E3342F; /* Button hover background color */
+    color: #FFF; /* White text color for contrast */
+}
+
+/* Footer styles */
+footer {
+    background-color: #FFF; /* Changed to white footer background */
+    color: #333; /* Updated to a darker text color for better visibility on white background */
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+.image-container {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+}
+
+.full-width-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjusts the image to cover the container while maintaining aspect ratio */
+}
+
+
+.navbar {
+    padding-top: 70px; /* Increase the top padding */
+    padding-bottom: 70px; /* Increase the bottom padding */
+    /* Other styles */
+}
+
+.navbar-brand img {
+    max-height: 80px; /* Controls the maximum height of the logo */
+    margin-right: 30px; /* Adds some space between the logo and any following text or elements */
+}
+
+.navbar {
+    align-items: center; /* Ensures vertical center alignment of navbar contents */
+}
+
+.custom-find-restaurant {
+    color: white !important; /* Ensures the text color is white */
+    background-color: green !important; /* Sets the button's background color to green */
+    border-color: green !important; /* Ensures the border color matches the background */
+    border-radius: 0 !important; /* Gives the button sharp corners for a rectangular shape */
+}
+
+/* Target the navigation links in the navbar */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    text-decoration: underline; /* Adds an underline on hover/focus */
+    color: #CD212A; /* Keeps the red color on hover, adjust if needed */
+}
+
+.footer {
+    background-color: #FF8500; /* Your specific shade of orange */
+    padding: 50px 0; /* Adjust padding as necessary */
+}
+
+.footer-slogan {
+    font-size: 2.5em; /* Adjust size as necessary */
+    margin-bottom: 20px; /* Space after slogan */
+}
+
+.footer-lead {
+    margin-bottom: 20px; /* Space before form */
+}
+
+.footer-form .form-control {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    width: auto;
+    margin-right: 15px; /* Space between form inputs */
+}
+
+.footer-form .form-control::placeholder {
+    color: white;
+}
+
+.footer-form .btn {
+    color: white; /* Text color for the button */
+    background-color: green; /* Your specific shade of green */
+    border-radius: 0; /* Rectangular shape */
+    padding: 10px 20px; /* Button padding */
+}
+
+.footer-privacy p {
+    font-size: 0.8em; /* Adjust size as necessary */
+    margin-top: 20px; /* Space above privacy text */
+}
+
+.footer-logo {
+    margin-top: 30px; /* Space above logo */
+}
+
+.footer-logo img {
+    max-width: 120px; /* Adjust width as necessary */
+    margin-bottom: 10px; /* Space between logo and date */
+}
+
+.footer-date {
+    font-size: 1.2em; /* Adjust size as necessary */
+}
+
+.bg-orange {
+    background-color: #FF8500; /* Adjust the color to match the exact orange tone used */
+}
+
+.text-white {
+    color: white;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-signup form {
+    /* Style your form fields and buttons here */
+}
+
+.footer-social-links {
+    /* Add style for social media icons */
+}
+
+.footer-links a,
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.footer-legal {
+    border-top: 1px solid white;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+/* Include responsive design considerations */
+@media (max-width: 768px) {
+    .footer-signup,
+    .footer-social-links,
+    .footer-links,
+    .footer-legal {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+.footer-lower-part {
+    border-top: 1px solid #ffffff50; /* Light white border for separation */
+    padding-top: 20px; /* Spacing from the top border */
+}
+
+.footer-hashtag {
+    font-size: 1.8em;
+    margin: 20px 0;
+}
+
+.footer-social-links {
+    margin: 20px 0;
+}
+
+.social-link {
+    margin: 0 10px;
+    color: white; /* Icon color */
+    font-size: 1.5em; /* Icon size */
+}
+
+.footer-nav {
+    margin: 20px 0;
+}
+
+.footer-link {
+    margin: 0 15px;
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-trademark p {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.custom-log-in {
+    background-color: green; /* Or any color you prefer */
+    color: white; /* Text color */
+    margin-left: 10px; /* Adds space between the buttons */
+    border-radius: 0; /* Rectangle shape */
+    padding: 5px 15px; /* Padding inside the button */
+}
+
+/* Optionally, you can add hover effects */
+.custom-log-in:hover {
+    background-color: darkgreen; /* Darker shade for hover effect */
+}
+
+.image-container {
+    width: 100%; /* Set the container to full width */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.image-container img {
+    width: 100%; /* Set image to full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline-block spacing */
+    margin-bottom: 20px; /* Adjust this value to create a gap between the image and footer */
+}
+
+/* Custom CSS to ensure image covers full width */
+.dashboard-image {
+    width: 100%;
+    overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+.dashboard-image img {
+    width: 100%; /* Set image width to 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper display as a block-level element */
+}
+
+
+
+.menu-section {
+    background-color: #f8f9fa; /* Light background for the menu section */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Import the custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* Apply the custom font to the menu heading */
+.menu-heading {
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    font-size: 1.9rem;
+    font-weight: 700; /* Set font weight to bold */
+    background-color: #FF8500;
+    color: white; /* Dark text for contrast */
+    margin-bottom: 1rem;
+    padding: 1.8rem 0; /* Adjust padding to increase height */
+}
+.menu-categories a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #333; /* Dark text color for the menu categories */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold;
+}
+
+.menu-categories a:hover {
+    text-decoration: underline; /* Underline on hover for visual feedback */
+}
+
+.menu-item-card {
+    display: inline-block;
+    width: 30%; /* Or any width that suits your layout, with margin for space */
+    margin: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.menu-item-card img {
+    width: 100%; /* Makes the image responsive within the card */
+    height: auto;
+    border-radius: 5px; /* Optional: rounds the corners of the images */
+}
+
+.menu-item-card h3 {
+    color: #333;
+}
+
+.menu-item-card p {
+    color: #666;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+  .card {
+    /* Ensuring that the card is flexible but has a max width */
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px; /* Smaller fixed height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 100px; /* Even smaller fixed height for extra small screens */
+    }
+}

@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="menu-section">
+    <h1 class="menu-heading">Menu</h1>
+    <div class="menu-categories">
+        <!-- Each href matches the id of the section it scrolls to -->
+        <a href="#sandwiches">Sandwiches</a>
+        <a href="#signature-wraps">Signature Wraps</a>
+        <a href="#tenders">Tenders</a>
+        <a href="#hot-wings">Hot Wings</a>
+        <a href="#drinks">Drinks</a>
+        <a href="#sides">Sides</a>
+        <!-- Continue adding categories as needed -->
+    </div>
+    
+    <!-- Sandwiches Section -->
+    <div id="sandwiches" class="menu-category text-center">
+        <h2>Sandwiches</h2>
+        <!-- Cards for each sandwich -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top" alt="Classic Chicken Sandwich">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Chicken Sandwich</h5>
+                        <p class="card-text">100% Fresh chicken marinated for 12 hours in our signature blend of Louisiana herbs & spices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top" alt="Spicy Deluxe Chicken Sandwich">
+                    <div class="card-body">
+                        <h5 class="card-title">Spicy Deluxe Chicken Sandwich</h5>
+                        <p class="card-text">A fiery twist on the classic with a spicy mayo sauce and jalapenos.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for sandwiches here -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top" alt="Spicy Deluxe Chicken Sandwich">
+                    <div class="card-body">
+                        <h5 class="card-title">Spicy Deluxe Chicken Sandwich</h5>
+                        <p class="card-text">A fiery twist on the classic with a spicy mayo sauce and jalapenos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signature Wraps Section -->
+    <div id="signature-wraps" class="menu-category text-center">
+        <h2>Signature Wraps</h2>
+        <!-- Cards for each wrap -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/wrap.jpeg') }}" class="card-img-top" alt="Signature Wrap 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Signature Wrap 1</h5>
+                        <p class="card-text">Description of the Signature Wrap 1.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/wrap.jpeg') }}" class="card-img-top" alt="Signature Wrap 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Signature Wrap 1</h5>
+                        <p class="card-text">Description of the Signature Wrap 1.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add more cards for signature wraps here -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/wrap.jpeg') }}" class="card-img-top" alt="Spicy Deluxe Chicken Sandwich">
+                    <div class="card-body">
+                        <h5 class="card-title">Spicy Deluxe Chicken Sandwich</h5>
+                        <p class="card-text">A fiery twist on the classic with a spicy mayo sauce and jalapenos.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Tenders Section -->
+    <div id="tenders" class="menu-category text-center">
+        <h2>Tenders</h2>
+        <!-- Cards for each tender -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top" alt="Tender 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Tender 1</h5>
+                        <p class="card-text">Description of Tender 1.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for tenders here -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/chicken.jpg') }}" class="card-img-top" alt="Spicy Deluxe Chicken Sandwich">
+                    <div class="card-body">
+                        <h5 class="card-title">Spicy Deluxe Chicken Sandwich</h5>
+                        <p class="card-text">A fiery twist on the classic with a spicy mayo sauce and jalapenos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hot Wings Section -->
+    <div id="hot-wings" class="menu-category text-center">
+        <h2>Hot Wings</h2>
+        <!-- Cards for each hot wing -->
+        <!-- Add cards for hot wings here -->
+    </div>
+
+    <!-- Drinks Section -->
+    <div id="drinks" class="menu-category text-center">
+        <h2>Drinks</h2>
+        <!-- Cards for each drink -->
+        <!-- Add cards for drinks here -->
+    </div>
+
+    <!-- Sides Section -->
+    <div id="sides" class="menu-category text-center">
+        <h2>Sides</h2>
+        <!-- Cards for each side -->
+        <!-- Add cards for sides here -->
+    </div>
+</div>
+{% endblock %}

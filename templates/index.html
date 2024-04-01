@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Home page specific content such as the dashboard image -->
+    <div class="container-fluid px-0"> <!-- Added px-0 to remove default padding -->
+        <div class="row">
+            <div class="col">
+                <div class="dashboard-image mb-4"> <!-- Added mb-4 for margin bottom -->
+                    <img src="{{ url_for('static', filename='images/dashboard.jpeg') }}" alt="Dashboard">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Any other content unique to the home page -->
+{% endblock %}
+
+
