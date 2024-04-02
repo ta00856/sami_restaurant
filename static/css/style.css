@@ -174,7 +174,7 @@ footer p {
 }
 
 .bg-orange {
-    background-color: #FF8500; /* Adjust the color to match the exact orange tone used */
+    background-color:#0b3414; /* Adjust the color to match the exact orange tone used */
 }
 
 .text-white {
@@ -311,7 +311,7 @@ footer p {
     font-family: 'Roboto', sans-serif; /* Use Roboto font */
     font-size: 1.9rem;
     font-weight: 700; /* Set font weight to bold */
-    background-color: #FF8500;
+    background-color: #0b3414;
     color: white; /* Dark text for contrast */
     margin-bottom: 1rem;
     padding: 1.8rem 0; /* Adjust padding to increase height */
@@ -379,4 +379,97 @@ html {
     }
 }
 
+.menu-category h2 {
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    font-size: 1.9rem;
+    font-weight: 700; /* Bold font */
+    background-color: #0b3414; /* Background color */
+    color: white; /* Text color */
+    margin-bottom: 1rem; /* Space below the heading */
+    padding: 1.8rem 0; /* Padding above and below the text */
+    text-align: center; /* Center the text */
+}
 
+
+.menu-content-background {
+    background-color: #0b3414; /* Your chosen color */
+    padding-top: 1rem; /* Space between the menu categories and the start of the colored area */
+}
+
+.menu-category {
+    margin-bottom: 2rem; /* Space between each category section */
+}
+
+.footer-spacing {
+    height: 50px; /* Adjust the space before the footer as needed */
+}
+/* Style for modal backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+/* Style for modal content */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
+}
+
+/* Style for modal header */
+.modal-header {
+    background-color: #0b3414; /* Blue background color */
+    color: #fff; /* White text color */
+    border-radius: 10px 10px 0 0; /* Rounded corners */
+}
+
+/* Style for modal title */
+.modal-title {
+    font-size: 1.25rem; /* Larger font size */
+}
+
+/* Style for modal body */
+.modal-body {
+    color: #333; /* Dark text color */
+    padding: 20px; /* Add padding */
+}
+
+/* Style for modal footer */
+.modal-footer {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 0 0 10px 10px; /* Rounded corners */
+}
+
+/* Style for close button */
+.close {
+    color: #000; /* Black close button color */
+}
+
+/* Hover effect for close button */
+.close:hover {
+    color: #333; /* Dark close button color on hover */
+}
+
+
+
+
+
+
+/* Style for text input */
+.footer-form input[type="text"],
+.footer-form input[type="email"],
+.footer-form input[type="password"] {
+    color: white; /* Set text color to white */
+}
+
+/* Style for placeholder text */
+.footer-form input[type="text"]::placeholder,
+.footer-form input[type="email"]::placeholder,
+.footer-form input[type="password"]::placeholder {
+    color: white; /* Set placeholder text color to white */
+}
+
+/* Style for border */
+.footer-form input[type="text"],
+.footer-form input[type="email"],
+.footer-form input[type="password"] {
+    border-color: white; /* Set border color to white */
+}

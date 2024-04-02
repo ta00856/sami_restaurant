@@ -1,9 +1,34 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash
+import psycopg2
+import psycopg2.extras
+from werkzeug.security import generate_password_hash, check_password_hash
+from config import Config
+
+
+
+
 
 # Initialize the Flask application
 app = Flask(__name__)
+app.config.from_object(Config)
 
-# Define the routes
+secret_key = app.config['SECRET_KEY']
+
+while True:
+    try:
+        conn = psycopg2.connect(host='localhost', database='uncle_sami', user = 'postgres',password = 'Kzzs@022704')
+        cursor = conn.cursor()
+        print("Database connection succesful")
+        break
+    except Exception as error :
+        print("Database connection failed")
+        print("Error", error)
+  
+       
+
+        
+        
+        
 @app.route('/')
 def home():
     # Render the home page template
@@ -38,6 +63,44 @@ def soul_powered():
 def join_us():
     # Render the join us page template
     return render_template('join_us.html')
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    # Check if name, email, and password are provided
+    if not name or not email or not password:
+        flash('Name, email, and password are required')
+        return redirect(url_for('home'))
+
+    hashed_password = generate_password_hash(password)
+
+    try:
+        cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        
+        cur.execute('SELECT * FROM users WHERE email = %s', (email,))
+        user = cur.fetchone()
+        if user:
+            flash('Email already exists')
+            return redirect(url_for('home'))
+        
+        print("Inserting user:", name, email, hashed_password)
+        cur.execute('INSERT INTO users (name, email, password_hash) VALUES (%s, %s, %s)',
+                    (name, email, hashed_password))
+        conn.commit()
+        cur.close()
+        flash('Signup successful')
+        print("User inserted successfully")
+    except psycopg2.Error as e:
+        flash('Error occurred while signing up: {}'.format(e))
+        print("Database error:", e)
+    finally:
+        if cur is not None:
+            cur.close()
+
+    return redirect(url_for('home'))
 
 # Check if the app.py file is being run directly and not imported
 if __name__ == '__main__':

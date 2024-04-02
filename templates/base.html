@@ -41,7 +41,7 @@
                             <a class="nav-link" href="{{ url_for('our_story') }}">Our Story</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('delivery') }}">Delivery</a>
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#deliveryModal">Delivery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('soul_powered') }}">Soul Powered</a>
@@ -74,12 +74,15 @@
             <!-- Sign Up Section (from your first image) -->
             <h2 class="footer-slogan">What's Poppin'?</h2>
             <p class="footer-lead">Get the latest News and Offers direct to your inbox</p>
-            <form class="footer-form my-3">
-                <input type="text" class="form-control" placeholder="Your Name...">
-                <input type="email" class="form-control" placeholder="Your Email...">
-                <input type="text" class="form-control" placeholder="D.O.B">
+            <form class="footer-form my-3" action="/signup" method="post">
+                <input type="text" class="form-control" placeholder="Your Name..." name="name" required>
+                <input type="email" class="form-control" placeholder="Your Email..." name="email" required>
+
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
+            
+            
             <p>I'd like to receive emails that contain news, offers and competitions from Popeyes and I accept Popeye's privacy policy. Your email is safe; we don't spam.</p>
             
             <!-- Lower Part of the Footer (from your second image) -->
@@ -89,7 +92,8 @@
                     <!-- Social Media Icons -->
                     <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/uncle_sami_streetfood/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+
                     <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
                 </div>
                 <nav class="footer-nav">
@@ -105,6 +109,25 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="deliveryModal" tabindex="-1" role="dialog" aria-labelledby="deliveryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deliveryModalLabel">Delivery Notice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You can only order on mobile.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
