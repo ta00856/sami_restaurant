@@ -7,134 +7,127 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Uncle Sami</title>
 </head>
 <body>
 
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Uncle Sami Logo" height="180"> <!-- Adjust height as needed -->
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Uncle Sami Logo" height="180"> <!-- Adjust height as needed -->
+            </a>
+
+            <!-- Login Icon and Text -->
+            <div class="navbar-text mr-auto d-flex align-items-center">
+                <a href="/login" class="nav-link text-white">
+                    <i class="fas fa-sign-in-alt mr-1"></i> Login
                 </a>
-                
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('menu') }}">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('restaurants') }}">Restaurants</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('our_story') }}">Our Story</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-toggle="modal" data-target="#deliveryModal">Delivery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('soul_powered') }}">Soul Powered</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('join_us') }}">Join Us</a>
-                        </li>
-                        <li class="nav-item ml-2"> <!-- Adds a bit of space between this button and the previous item -->
-                            <a class="btn btn-success custom-find-restaurant" href="#" role="button">Find Restaurant</a>
-                        </li>
-                       
-
-
-                    </ul>
-                </div>
             </div>
-        </nav>
-    </header>
 
-    
-
-
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer class="footer bg-orange text-white">
-        <div class="container text-center">
-            <!-- Sign Up Section (from your first image) -->
-            <h2 class="footer-slogan">What's Poppin'?</h2>
-            <p class="footer-lead">Get the latest News and Offers direct to your inbox</p>
-            <form class="footer-form my-3" action="/signup" method="post">
-                <input type="text" class="form-control" placeholder="Your Name..." name="name" required>
-                <input type="email" class="form-control" placeholder="Your Email..." name="email" required>
-
-                <input type="password" class="form-control" placeholder="Password" name="password" required>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
-            </form>
-            
-            
-            <p>I'd like to receive emails that contain news, offers and competitions from Popeyes and I accept Popeye's privacy policy. Your email is safe; we don't spam.</p>
-            
-            <!-- Lower Part of the Footer (from your second image) -->
-            <div class="footer-lower-part">
-                <p class="footer-hashtag">#FamousLouisianaChicken</p>
-                <div class="footer-social-links">
-                    <!-- Social Media Icons -->
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/uncle_sami_streetfood/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-
-                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                </div>
-                <nav class="footer-nav">
-                    <!-- Footer Navigation Links -->
-                    <a href="#" class="footer-link">Menu</a>
-                    <a href="#" class="footer-link">Restaurants</a>
-                    <a href="#" class="footer-link">Delivery</a>
-                    <a href="#" class="footer-link">Soul Powered</a>
-                    <a href="#" class="footer-link">Join Us</a>
-                    <!-- More links can be added here -->
-                </nav>
-                <p>&copy; PLK Chicken UK Ltd 2024</p>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('menu') }}">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('restaurants') }}">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('our_story') }}">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#deliveryModal">Delivery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('soul_powered') }}">Soul Powered</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('join_us') }}">Join Us</a>
+                    </li>
+                    <li class="nav-item ml-2"> <!-- Adds a bit of space between this button and the previous item -->
+                        <a class="btn btn-success custom-find-restaurant" href="#" role="button">Find Restaurant</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </nav>
+</header>
 
-    <div class="modal fade" id="deliveryModal" tabindex="-1" role="dialog" aria-labelledby="deliveryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deliveryModalLabel">Delivery Notice</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    You can only order on mobile.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer bg-orange text-white">
+    <div class="container text-center">
+        <!-- Sign Up Section (from your first image) -->
+        <h2 class="footer-slogan">What's Poppin'?</h2>
+        <p class="footer-lead">Get the latest News and Offers direct to your inbox</p>
+        <form class="footer-form my-3" action="/signup" method="post">
+            <input type="text" class="form-control" placeholder="Your Name..." name="name" required>
+            <input type="email" class="form-control" placeholder="Your Email..." name="email" required>
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <p>I'd like to receive emails that contain news, offers and competitions from Popeyes and I accept Popeye's privacy policy. Your email is safe; we don't spam.</p>
+
+        <!-- Lower Part of the Footer (from your second image) -->
+        <div class="footer-lower-part">
+            <p class="footer-hashtag">#FamousLouisianaChicken</p>
+            <div class="footer-social-links">
+                <!-- Social Media Icons -->
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/uncle_sami_streetfood/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <nav class="footer-nav">
+                <!-- Footer Navigation Links -->
+                <a href="#" class="footer-link">Menu</a>
+                <a href="#" class="footer-link">Restaurants</a>
+                <a href="#" class="footer-link">Delivery</a>
+                <a href="#" class="footer-link">Soul Powered</a>
+                <a href="#" class="footer-link">Join Us</a>
+                <!-- More links can be added here -->
+            </nav>
+            <p>&copy; PLK Chicken UK Ltd 2024</p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="deliveryModal" tabindex="-1" role="dialog" aria-labelledby="deliveryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deliveryModalLabel">Delivery Notice</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You can only order on mobile.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-    
+</div>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.14/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.14/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Custom JS -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

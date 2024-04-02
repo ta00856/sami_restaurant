@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 import psycopg2
 import psycopg2.extras
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -101,6 +101,37 @@ def signup():
             cur.close()
 
     return redirect(url_for('home'))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        try:
+            cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+            cursor.execute('SELECT * FROM users WHERE email = %s', (email,))
+            user = cursor.fetchone()
+            if user and check_password_hash(user['password_hash'], password):
+                session['email'] = email
+                # flash('Login successful', 'success')
+                # Render a template that includes a JavaScript redirect
+                return render_template('login_success.html', redirect_url=url_for('home'))
+            else:
+                flash('Invalid email or password', 'danger')
+        except psycopg2.Error as e:
+            flash(f'Error occurred while logging in: {e}', 'danger')
+            print("Database error:", e)
+        finally:
+            cursor.close()
+
+    return render_template('login.html')
+
+
+# Other routes and functionalities remain the same
+
+# Check if the app.py file is being run directly and not imported
+
 
 # Check if the app.py file is being run directly and not imported
 if __name__ == '__main__':
