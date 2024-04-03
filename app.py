@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 import psycopg2
 import psycopg2.extras
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -32,6 +32,7 @@ while True:
 @app.route('/')
 def home():
     # Render the home page template
+    
     return render_template('index.html')
 
 @app.route('/menu')
@@ -99,7 +100,7 @@ def signup():
     finally:
         if cur is not None:
             cur.close()
-
+    flash('Signup successful', 'success') 
     return redirect(url_for('home'))
 
 @app.route('/login', methods=['GET', 'POST'])

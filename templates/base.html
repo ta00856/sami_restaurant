@@ -79,7 +79,9 @@
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
         <p>I'd like to receive emails that contain news, offers and competitions from Popeyes and I accept Popeye's privacy policy. Your email is safe; we don't spam.</p>
-
+        <div id="signup-success" class="alert alert-success" role="alert">
+            Signup successful
+        </div>
         <!-- Lower Part of the Footer (from your second image) -->
         <div class="footer-lower-part">
             <p class="footer-hashtag">#FamousLouisianaChicken</p>
@@ -129,5 +131,71 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Custom JS -->
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+{% with messages = get_flashed_messages(category_filter=["success"]) %}
+  {% if messages %}
+    <script>
+    $(document).ready(function(){
+        $('#signupSuccessModal').modal('show');
+    });
+    </script>
+
+    <!-- Signup Success Modal -->
+    <div class="modal fade" id="signupSuccessModal" tabindex="-1" role="dialog" aria-labelledby="signupSuccessModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signupSuccessModalLabel">Success!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+
+
 </body>
+
+{% if signup_successful %}
+<script>
+$(document).ready(function(){
+    $('#signupSuccessModal').modal('show');
+});
+</script>
+
+<!-- Signup Success Modal -->
+<div class="modal" id="signupSuccessModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Signup Successful</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Your signup is successful. Welcome to the community!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Great!</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
 </html>
