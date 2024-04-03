@@ -23,9 +23,22 @@
 
             <!-- Login Icon and Text -->
             <div class="navbar-text mr-auto d-flex align-items-center">
-                <a href="/login" class="nav-link text-white">
-                    <i class="fas fa-sign-in-alt mr-1"></i> Login
-                </a>
+                {% if session.get('email') %}
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                            <h6 class="dropdown-header">{{ session['name'] }}</h6>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">{{ session['email'] }}</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="/login" class="nav-link text-white">
+                        <i class="fas fa-sign-in-alt mr-1"></i> Login
+                    </a>
+                {% endif %}
             </div>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -484,3 +484,27 @@ html {
     z-index: 1000;
     display: none;
 }
+
+
+
+/* Targeting the dropdown when it is active/showing */
+.dropdown.show .dropdown-header, .dropdown.show .dropdown-item {
+    color: #000000; /* Using black for high contrast; adjust as needed */
+    background-color: #EFEFEF; /* Light background for contrast; adjust this color based on your design */
+}
+
+/* Enhancing visibility on hover for each item */
+.dropdown.show .dropdown-item:hover, .dropdown.show .dropdown-item:focus, .dropdown.show .dropdown-header:hover {
+    color: #000000; /* Ensuring text is clearly visible on hover/focus */
+    background-color: #CCCCCC; /* Slightly darker background on hover for contrast */
+}
+
+
+#userDropdown {
+    background-color: #0b3414; /* Dark green background */
+}
+
+/* Optional: Changing the border color to match or complement the background */
+#userDropdown {
+    border-color: #0b3414; /* Adjust as needed, can be the same as background or a complementary color */
+}

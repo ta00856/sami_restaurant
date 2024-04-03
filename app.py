@@ -115,8 +115,7 @@ def login():
             user = cursor.fetchone()
             if user and check_password_hash(user['password_hash'], password):
                 session['email'] = email
-                # flash('Login successful', 'success')
-                # Render a template that includes a JavaScript redirect
+                session['name'] = user['name']  # Store user's name in session
                 return render_template('login_success.html', redirect_url=url_for('home'))
             else:
                 flash('Invalid email or password', 'danger')
@@ -127,6 +126,7 @@ def login():
             cursor.close()
 
     return render_template('login.html')
+
 
 
 # Other routes and functionalities remain the same
